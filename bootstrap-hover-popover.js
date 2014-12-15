@@ -5,31 +5,32 @@
             class: 'popover-hovered'
         }, options)
 
-        this.mouseover(function(e) {
-            $(this).popover('show').addClass(options.class)
+        this.mouseover(function(event) {
+            $(this).popover('show')
         })
-        .mouseleave(function(e) {
-            var item = $(this)
+        .mouseleave(function(event) {
+            var $this = $(this)
             setTimeout(function() {
-                if (item.hasClass(options.class)) {
-                    item.popover('hide')
+                if (!$this.hasClass(options.class)) {
+                    $this.popover('hide')
                 }
             }, options.delay)
         })
-        .on('shown.bs.popover', function(e) {
-            var item = $(this)
-            var popover = $(this).next()
-            popover.mouseenter(function(e) {
-                item.removeClass(options.class)
+        .on('shown.bs.popover', function(event) {
+            var $this = $(this)
+            var popover = $this.next()
+            popover.mouseenter(function(event) {
+                $this.addClass(options.class)
             })
-            .mouseleave(function(e) {
+            .mouseleave(function(event) {
                 setTimeout(function() {
-                    if (!item.hasClass(options.class)) {
-                        item.popover('hide')
-                    }
+                    $this
+                        .popover('hide')
+                        .removeClass(options.class)
                 }, options.delay)
             })
         })
+        
         return this
     }
 }(jQuery))
