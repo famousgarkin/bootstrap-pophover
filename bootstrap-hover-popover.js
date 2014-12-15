@@ -1,8 +1,8 @@
 (function($) {
-    $.fn.mouseoverPopover = function(options) {
+    $.fn.hoverPopover = function(options) {
         var options = $.extend({
-            class: 'popover-hovered',
-            delay: 100
+            delay: 100,
+            class: 'popover-hovered'
         }, options)
 
         this.mouseover(function(e) {
