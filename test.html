@@ -9,14 +9,26 @@
 <script src="bootstrap-popover-mouseover.js"></script>
 </head>
 <body>
-<a href="#" id="test" class="btn btn-lg btn-default" role="button" data-toggle="popover" data-trigger="focus" title="mouseover popover" data-content="And here's some amazing content. It's very engaging. Right?">mouseover popover</a>
-
+<a href="#" id="test1" class="btn btn-lg btn-default" role="button" data-toggle="popover" data-trigger="focus" title="mouseover popover" data-content="And here's some amazing content. It's very engaging. Right?">mouseover popover</a>
 <script>
 $(document).ready(function() {
-    $('#test').popover({
+    $('#test1').popover({
         placement: 'auto top'
     })
     .mouseoverPopover()
+})
+</script>
+
+<a href="#" id="test2" class="btn btn-lg btn-default" role="button" data-toggle="popover" data-trigger="focus" title="mouseover popover" data-content="And here's some amazing content. It's very engaging. Right?">mouseover popover</a>
+<script>
+$(document).ready(function() {
+    $('#test2').popover({
+        placement: 'auto top'
+    })
+    .mouseoverPopover({
+        delay: 2000,
+        class: 'test-hovered'
+    })
 })
 </script>
 </body>
