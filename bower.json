@@ -1,6 +1,10 @@
 {
-    "name": "bootstrap-popover-mouseover",
-    "version": "0.0.0",
-    "license": "MIT",
-    "private": true
+  "name": "bootstrap-popover-mouseover",
+  "version": "0.0.0",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "jquery": ">=1.11.1 <3",
+    "bootstrap": "^3.3.1"
+  }
 }
