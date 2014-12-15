@@ -13,7 +13,10 @@
 
 <script>
 $(document).ready(function() {
-    mouseoverPopover('#test')
+    $('#test').popover({
+        placement: 'auto top'
+    })
+    .mouseoverPopover()
 })
 </script>
 </body>

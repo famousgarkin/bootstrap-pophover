@@ -1,35 +1,33 @@
-var mouseoverPopover = function(elem) {
-    elem = $(elem)
-    var mouseleavePopoverHideFlag = 'mouseleave-popover-hide'
+(function($) {
+    var hoveredFlag = 'popover-hovered'
+    var delay = 100
 
-    elem.popover({
-        placement: 'auto top',
-        trigger: 'manual',
-        animation: false,
-        html: true,
-    })
-    .mouseover(function(e) {
-        $(this).popover('show').addClass(mouseleavePopoverHideFlag)
-    })
-    .mouseleave(function(e) {
-        var item = $(this)
-        setTimeout(function() {
-            if (item.hasClass(mouseleavePopoverHideFlag)) {
-                item.popover('hide')
-            }
-        }, 100)
-    })
-    .on('shown.bs.popover', function(e) {
-        var item = $(this)
-        var popover = $(this).next()
-        popover.mouseenter(function(e) {
-            item.removeClass(mouseleavePopoverHideFlag)
-        }).mouseleave(function(e) {
+    $.fn.mouseoverPopover = function() {
+        this.mouseover(function(e) {
+            $(this).popover('show').addClass(hoveredFlag)
+        })
+        .mouseleave(function(e) {
+            var item = $(this)
             setTimeout(function() {
-                if (!item.hasClass(mouseleavePopoverHideFlag)) {
+                if (item.hasClass(hoveredFlag)) {
                     item.popover('hide')
                 }
-            }, 100)
+            }, delay)
         })
-    })
-}
+        .on('shown.bs.popover', function(e) {
+            var item = $(this)
+            var popover = $(this).next()
+            popover.mouseenter(function(e) {
+                item.removeClass(hoveredFlag)
+            })
+            .mouseleave(function(e) {
+                setTimeout(function() {
+                    if (!item.hasClass(hoveredFlag)) {
+                        item.popover('hide')
+                    }
+                }, delay)
+            })
+        })
+        return this
+    }
+}(jQuery))
