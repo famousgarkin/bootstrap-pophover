@@ -20,8 +20,8 @@
         })
         .on('shown.bs.popover', function(event) {
             var $this = $(this)
-            var popover = $this.next()
-            popover.mouseenter(function(event) {
+            var popover = $this.data('bs.popover')
+            popover.$tip.mouseenter(function(event) {
                 $this.addClass(options.klass)
             })
             .mouseleave(function(event) {
