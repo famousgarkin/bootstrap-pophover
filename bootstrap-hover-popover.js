@@ -1,9 +1,11 @@
 (function($) {
+    var DEFAULT_OPTIONS = {
+        delay: 100,
+        klass: 'popover-tip-hovered'
+    }
+
     $.fn.hoverPopover = function(options) {
-        var options = $.extend({
-            delay: 100,
-            klass: 'popover-hovered'
-        }, options)
+        var options = $.extend(DEFAULT_OPTIONS, options)
 
         this.mouseover(function(event) {
             $(this).popover('show')
