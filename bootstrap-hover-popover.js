@@ -2,7 +2,7 @@
     $.fn.hoverPopover = function(options) {
         var options = $.extend({
             delay: 100,
-            class: 'popover-hovered'
+            klass: 'popover-hovered'
         }, options)
 
         this.mouseover(function(event) {
@@ -11,7 +11,7 @@
         .mouseleave(function(event) {
             var $this = $(this)
             setTimeout(function() {
-                if (!$this.hasClass(options.class)) {
+                if (!$this.hasClass(options.klass)) {
                     $this.popover('hide')
                 }
             }, options.delay)
@@ -20,17 +20,17 @@
             var $this = $(this)
             var popover = $this.next()
             popover.mouseenter(function(event) {
-                $this.addClass(options.class)
+                $this.addClass(options.klass)
             })
             .mouseleave(function(event) {
                 setTimeout(function() {
                     $this
                         .popover('hide')
-                        .removeClass(options.class)
+                        .removeClass(options.klass)
                 }, options.delay)
             })
         })
-        
+
         return this
     }
 }(jQuery))
