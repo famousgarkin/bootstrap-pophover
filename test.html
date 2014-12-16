@@ -11,23 +11,17 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 </head>
 <body>
-<a href="#" id="test1" class="btn btn-lg btn-default" role="button" title="mouseover popover" data-content="And here's some amazing content. It's very engaging. Right?">mouseover popover</a>
+<a href="#" id="test1" class="btn btn-lg btn-default" role="button" title="mouseover popover" data-toggle="popover" data-trigger="hover" data-placement="auto top" data-content="And here's some amazing content. It's very engaging. Right?">mouseover popover</a>
 <script>
 $(document).ready(function() {
-    $('#test1').popover({
-        placement: 'auto top'
-    })
-    .hoverPopover()
+    $('#test1').popover().hoverPopover()
 })
 </script>
 
-<a href="#" id="test2" class="btn btn-lg btn-default" role="button" title="mouseover popover" data-content="And here's some amazing content. It's very engaging. Right?">mouseover popover</a>
+<a href="#" id="test2" class="btn btn-lg btn-default" role="button" title="mouseover popover" data-toggle="popover" data-trigger="hover" data-placement="auto top" data-content="And here's some amazing content. It's very engaging. Right?">mouseover popover</a>
 <script>
 $(document).ready(function() {
-    $('#test2').popover({
-        placement: 'auto top'
-    })
-    .hoverPopover({
+    $('#test2').popover().hoverPopover({
         delay: 2000,
         klass: 'test-popover-tip-hovered'
     })
