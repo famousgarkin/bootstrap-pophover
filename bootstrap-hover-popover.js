@@ -5,7 +5,7 @@
     }
 
     $.fn.hoverPopover = function(options) {
-        var options = $.extend(DEFAULT_OPTIONS, options)
+        var options = $.extend({}, DEFAULT_OPTIONS, options)
 
         this.mouseover(function(event) {
             $(this).popover('show')
