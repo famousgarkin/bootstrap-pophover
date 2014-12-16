@@ -1,4 +1,4 @@
-(function($) {
+;(function($) {
     var DEFAULT_OPTIONS = {
         delay: 100,
         klass: 'popover-tip-hovered'
