@@ -24,19 +24,43 @@
                     }
                 }, options.delay)
             })
-            .one('shown.bs.popover', function(event) {
+
+            var timeout = new Timeout(function() {
+                hovered = false
+                $this.popover('hide')
+            }, options.delay)
+
+            $this.one('shown.bs.popover', function(event) {
                 popover.$tip.mouseenter(function(event) {
+                    timeout.clear()
                     hovered = true
                 })
                 .mouseleave(function(event) {
-                    setTimeout(function() {
-                        hovered = false
-                        $this.popover('hide')
-                    }, options.delay)
+                    timeout.set()
                 })
             })
         })
 
         return this
+    }
+
+    var Timeout = function(callback, delay) {
+        this.callback = callback
+        this.delay = delay
+        this.timeout = undefined
+    }
+
+    Timeout.prototype.set = function() {
+        var self = this
+        if (this.timeout === undefined) {
+            this.timeout = setTimeout(function() {
+                self.callback()
+                self.timeout = undefined
+            }, this.delay)
+        }
+    }
+
+    Timeout.prototype.clear = function() {
+        this.timeout = clearTimeout(this.timeout)
     }
 }(jQuery))
