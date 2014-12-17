@@ -9,22 +9,34 @@
 <script src="bootstrap-hover-popover.js"></script>
 
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<style>
+p {
+    margin: 100px 0;
+}
+</style>
 </head>
 <body>
-<a href="#" id="test1" class="btn btn-lg btn-default" role="button" title="mouseover popover" data-toggle="popover" data-trigger="manual" data-placement="auto top" data-content="And here's some amazing content. It's very engaging. Right?">mouseover popover</a>
-<script>
-$(document).ready(function() {
-    $('#test1').popover().hoverPopover()
-})
-</script>
+<center>
+    <p>
+        <a href="#" id="test1" class="btn btn-lg btn-default" role="button" title="mouseover popover" data-toggle="popover" data-trigger="manual" data-placement="auto top" data-content="And here's some amazing content. It's very engaging. Right?">mouseover popover</a>
+        <script>
+        $(document).ready(function() {
+            $('#test1').popover().hoverPopover()
+        })
+        </script>
+    </p>
 
-<a href="#" id="test2" class="btn btn-lg btn-default" role="button" title="mouseover popover" data-toggle="popover" data-trigger="manual" data-placement="auto top" data-content="And here's some amazing content. It's very engaging. Right?">mouseover popover</a>
-<script>
-$(document).ready(function() {
-    $('#test2').popover().hoverPopover({
-        delay: 2000
-    })
-})
-</script>
+    <p>
+        <a href="#" id="test2" class="btn btn-lg btn-default" role="button" title="mouseover popover" data-toggle="popover" data-trigger="manual" data-placement="auto top" data-content="And here's some amazing content. It's very engaging. Right?">mouseover popover</a>
+        <script>
+        $(document).ready(function() {
+            $('#test2').popover().hoverPopover({
+                delay: 2000
+            })
+        })
+        </script>
+    </p>
+<center>
 </body>
 </html>
