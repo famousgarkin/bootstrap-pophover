@@ -13,7 +13,9 @@
             var hovered = false
 
             $this.mouseover(function(event) {
-                $this.popover('show')
+                if (!popover.$tip || !popover.$tip.is(':visible')) {
+                    $this.popover('show')
+                }
             })
             .mouseleave(function(event) {
                 setTimeout(function() {
