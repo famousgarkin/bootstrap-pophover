@@ -22,7 +22,7 @@
                     }
                 }, options.delay)
             })
-            .on('shown.bs.popover', function(event) {
+            .one('shown.bs.popover', function(event) {
                 popover.$tip.mouseenter(function(event) {
                     hovered = true
                 })
