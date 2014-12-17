@@ -1,6 +1,6 @@
 ;(function($) {
     var DEFAULT_OPTIONS = {
-        delay: 100
+        delay: 250
     }
 
     $.fn.hoverPopover = function(options) {
