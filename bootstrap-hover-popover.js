@@ -10,33 +10,26 @@
             var $this = $(this)
             var popover = $this.data('bs.popover')
 
-            var hovered = false
+            var hideTimeout = new Timeout(function() {
+                $this.popover('hide')
+            }, options.delay)
 
             $this.mouseover(function(event) {
                 if (!popover.$tip || !popover.$tip.is(':visible')) {
                     $this.popover('show')
                 }
+                hideTimeout.clear()
             })
             .mouseleave(function(event) {
-                setTimeout(function() {
-                    if (!hovered) {
-                        $this.popover('hide')
-                    }
-                }, options.delay)
+                hideTimeout.set()
             })
-
-            var timeout = new Timeout(function() {
-                hovered = false
-                $this.popover('hide')
-            }, options.delay)
 
             $this.one('shown.bs.popover', function(event) {
                 popover.$tip.mouseenter(function(event) {
-                    timeout.clear()
-                    hovered = true
+                    hideTimeout.clear()
                 })
                 .mouseleave(function(event) {
-                    timeout.set()
+                    hideTimeout.set()
                 })
             })
         })
