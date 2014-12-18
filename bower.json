@@ -1,7 +1,7 @@
 {
   "name": "bootstrap-hover-popover",
   "version": "0.0.0",
-  "description": "keep Bootstrap popover shown while hovered",
+  "description": "Bootstrap extension to keep popovers shown while hovered",
   "keywords": [
       "bootsrap",
       "hover",
