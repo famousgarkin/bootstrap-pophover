@@ -2,7 +2,7 @@
   "name": "bootstrap-hover-popover",
   "version": "0.0.0",
   "description": "keep Bootstrap popover shown while hovered",
-  "keyboards": [
+  "keywords": [
       "bootsrap",
       "hover",
       "popover",
