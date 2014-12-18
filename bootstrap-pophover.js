@@ -3,7 +3,7 @@
         delay: 250
     }
 
-    $.fn.hoverPopover = function(options) {
+    $.fn.pophover = function(options) {
         var options = $.extend({}, DEFAULT_OPTIONS, options)
 
         this.each(function() {

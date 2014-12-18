@@ -1,5 +1,5 @@
 {
-  "name": "bootstrap-hover-popover",
+  "name": "bootstrap-pophover",
   "version": "0.0.0",
   "description": "Bootstrap extension to keep popovers shown while hovered",
   "keywords": [
@@ -10,10 +10,10 @@
   ],
   "license": "MIT",
   "private": true,
-  "main": "bootstrap-hover-popover.js",
+  "main": "bootstrap-pophover.js",
   "ignore": [
       "*",
-      "!bootstrap-hover-popover.js"
+      "!bootstrap-pophover.js"
   ],
   "dependencies": {
     "jquery": "^1.11.1 || ^2",
