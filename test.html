@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="bootstrap-pophover.js"></script>
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<style>
+p {
+    margin: 100px 0;
+}
+</style>
+</head>
+<body>
+<center>
+    <p>
+        <a href="#" id="test1" class="btn btn-lg btn-default" role="button" title="mouseover popover" data-toggle="popover" data-trigger="manual" data-placement="auto top" data-content="And here's some amazing content. It's very engaging. Right?">mouseover popover</a>
+        <script>
+        $(document).ready(function() {
+            $('#test1').popover().pophover()
+        })
+        </script>
+    </p>
+
+    <p>
+        <a href="#" id="test2" class="btn btn-lg btn-default" role="button" title="mouseover popover" data-toggle="popover" data-trigger="manual" data-placement="auto top" data-content="And here's some amazing content. It's very engaging. Right?">mouseover popover</a>
+        <script>
+        $(document).ready(function() {
+            $('#test2').popover().pophover({
+                delay: 2000
+            })
+        })
+        </script>
+    </p>
+<center>
+</body>
+</html>
