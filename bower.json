@@ -1,6 +1,6 @@
 {
   "name": "bootstrap-pophover",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Bootstrap extension to keep popovers open while hovered",
   "keywords": [
       "bootsrap",
@@ -12,7 +12,6 @@
   "authors": [
     "Ján Dzurek <famousgarkin@outlook.com>"
   ],
-  "private": true,
   "main": "bootstrap-pophover.js",
   "ignore": [
       "*",
