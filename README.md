@@ -1,6 +1,6 @@
 # bootstrap-pophover
 
-A Bootstrap extension to keep popovers shown while hovered.
+A Bootstrap extension to keep popovers open while hovered.
 
 ## Usage
 
