@@ -4,7 +4,7 @@
     }
 
     $.fn.pophover = function(options) {
-        var options = $.extend({}, DEFAULT_OPTIONS, options)
+        options = $.extend({}, DEFAULT_OPTIONS, options)
 
         this.each(function() {
             var $this = $(this)
